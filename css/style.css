@@ -4,7 +4,7 @@ li {
 
 main {
     background-color: #7fffd4;
-    height: 100vh;
+    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,11 +53,10 @@ main {
 }
 
 .square.active.bomb {
-    background-color: crimson;
+    background-color: crimson; 
 }
 
 footer {
-    height: 10vh;
-    line-height: 10vh;
+    line-height: 100px;
     vertical-align: middle;
 }

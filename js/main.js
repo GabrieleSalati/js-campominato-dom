@@ -11,7 +11,6 @@ play.addEventListener(
         const level = difficultyEl.value;
         console.log(level);
 
-        const bombs = [];
         console.log(bombs);
 
         while (bombs.length < 16) {
@@ -66,10 +65,17 @@ function gridGenerator(gridEL, level, i) {
             function () {
                 this.classList.toggle("active");
                 console.log(this.innerHTML);
+                console.log(bombs);
 
-                if (squareEl == bombs[i]) {
-                    this.classList.toggle("bomb");
+                let number = parseInt(this.innerHTML);
+                
+                for (i = 0; i < bombs.length; i++) {
+                    if (number == bombs[i]) {
+                        this.classList.add("bomb");
+                        alert("Game lost!");
+                    }
                 }
+                
             }
         )
 
