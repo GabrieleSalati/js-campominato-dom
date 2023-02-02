@@ -1,6 +1,7 @@
 // ON LOAD
 
 const startButton = document.getElementById("play");
+const bombs = [];
 
 play.addEventListener(
     "click",
@@ -9,6 +10,17 @@ play.addEventListener(
         const difficultyEl = document.getElementById("difficulty");
         const level = difficultyEl.value;
         console.log(level);
+
+        const bombs = [];
+        console.log(bombs);
+
+        while (bombs.length < 16) {
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+
+            if (!bombs.includes(randomNumber)) {
+                bombs.push(randomNumber);
+            }
+        }
 
         gridGenerator(gridEl, level);
 
@@ -54,6 +66,10 @@ function gridGenerator(gridEL, level, i) {
             function () {
                 this.classList.toggle("active");
                 console.log(this.innerHTML);
+
+                if (squareEl == bombs[i]) {
+                    this.classList.toggle("bomb");
+                }
             }
         )
 
@@ -61,17 +77,10 @@ function gridGenerator(gridEL, level, i) {
     }
 }
 
+// Result
 
 
-const bombs = [];
-console.log(bombs);
 
-while (bombs.length <= 16) {
-    randomNumber = Math.floor(Math.random() * 100) + 1;
 
-    if (!bombs.includes(randomNumber)) {
-        bombs.push(randomNumber);
-    }
-}
 
 

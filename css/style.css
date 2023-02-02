@@ -52,6 +52,10 @@ main {
     background-color: cadetblue;
 }
 
+.square.active.bomb {
+    background-color: crimson;
+}
+
 footer {
     height: 10vh;
     line-height: 10vh;
